@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful | Woletoks Ventures</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="bg-light">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Woletoks Ventures</a>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-outline">Return to Shop</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Success Content -->
+    <section class="section" style="min-height: 80vh; display: flex; align-items: center;">
+        <div class="container text-center" style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
+            <div style="font-size: 80px; color: #4CAF50; margin-bottom: 10px;">✓</div>
+            <h1 class="section-title">Payment Successful!</h1>
+            <p class="section-subtitle" style="margin-bottom: 30px;">Thank you for your order. Your transaction was completed successfully, and your premium lace fabrics will be on their way soon.</p>
+            
+            <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: var(--shadow-sm); text-align: left; margin-bottom: 40px; border-top: 4px solid var(--primary-color);">
+                <h3 style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; font-family: 'Playfair Display', serif;">Order Summary</h3>
+                <p style="margin-bottom: 8px;"><strong>Transaction Reference:</strong> <span id="ref-display" style="font-family: monospace; background: #f4f4f4; padding: 2px 6px; border-radius: 4px;">Loading...</span></p>
+                <p style="font-size: 0.95em; color: #666; line-height: 1.6; margin-top: 15px;">
+                    We have sent a digital receipt to your email address. You will receive an update from our logistics team once your order is processed for delivery.
+                </p>
+            </div>
+
+            <a href="index.html" class="btn btn-primary btn-large">Continue Shopping</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Woletoks Ventures. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get reference from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const ref = urlParams.get('reference');
+        if(ref) {
+            document.getElementById('ref-display').textContent = ref;
+        } else {
+            document.getElementById('ref-display').textContent = "WOL_" + Math.floor(Math.random() * 1000000000); // Demo fallback
+        }
+    </script>
+</body>
+</html>
